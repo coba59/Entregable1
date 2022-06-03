@@ -17,6 +17,7 @@ function sumarNumero() {
             console.log("Suma: " +suma)
             console.log("Nro de iteracion: "+i)
             alert("Suma: " +suma)
+            alert("ALERT SUMAR NUMERO")
         }
     }
     
@@ -31,6 +32,7 @@ function sumarNumero() {
             result = result + " " + txtConcat
             console.log(result)
             alert(result)
+            alert("ALERT SUMAR RESULTADO")
         }
     }
     
