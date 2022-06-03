@@ -9,38 +9,39 @@
 
 
 function sumarNumero() {
-let numero1 = parseInt(prompt("Ingrese el numero que sera sumado en cada iteraccion"));
-let suma = 0;
-    for (let i=0; i < 10; i++){
-        let numero2 = parseInt(prompt("Ingrese el numero que sera sumado en cada iteraccion"));
-        suma = numero1 + numero2;
-        console.log("Suma: " +suma)
-        console.log("Nro de iteracion: "+i)
+    let numero1 = parseInt(prompt("Ingrese un número"));
+    let numero2 = parseInt(prompt("Ingrese el número que sera sumado en cada iteraccion"));
+    let suma = 0;
+        for (let i=0; i < 10; i++){
+            suma = numero1 + numero2;
+            console.log("Suma: " +suma)
+            console.log("Nro de iteracion: "+i)
+            alert("Suma: " +suma)
+        }
     }
-}
-
-sumarNumero()
-
-function concatenarTexto() {
-let texto = prompt("Ingrese un texto")
-let result = texto
-let txtConcat
-
-    while (txtConcat != 'ESC'){
-        txtConcat = prompt("Ingrese un texto para concatenar al inicial")
-        result = result + " " + txtConcat
-        console.log(result)
+    
+    sumarNumero()
+    
+    function concatenarTexto() {
+    let texto = prompt("Ingrese un texto")
+    let result = texto
+    let txtConcat = prompt("Ingrese un texto para concatenar al texto anterior. Puede dejar de concatenar escribiendo ESC")
+    
+        while (txtConcat != 'ESC'){
+            result = result + " " + txtConcat
+            console.log(result)
+            alert(result)
+        }
     }
-}
-
-concatenarTexto()
-
-function repetirMensaje() {
-let numero1 = parseInt(prompt("Ingrese un numero para repetir el mensaje"))
-
-    for(let i = 1; i <= numero1; i++){
-        alert("Hola")
+    
+    concatenarTexto()
+    
+    function repetirMensaje() {
+    let numero1 = parseInt(prompt("Ingrese un numero para repetir el mensaje"))
+    
+        for(let i = 1; i <= numero1; i++){
+            alert("Hola")
+        }
     }
-}
-
-repetirMensaje() 
+    
+    repetirMensaje() 
