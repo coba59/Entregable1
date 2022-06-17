@@ -1,56 +1,60 @@
-// - Pedir numero 
-// - Sumar otro numero al pedido anteriormente
-// - pedir texto
-// - concatenar un valor en cada repeticion, 
-// - una salida por cada resultado hasta que se ingresa "ESC"
-// - pedir un nro 
-// - repetir la salida del mensaje "HOLA" la cantidad de veces ingresada
+// Mensaje de bienvenida
+// Mostrar destinos y preguntar cual quiere 
+// mostrar costo por viaje con escala y sin escala. dar a elegir 
+// preguntar cuantos pasajeros y calcular el costo con impuestos
+// mostrar detalle del pedido con el desglose
 
 
-function sumarNumero() 
-    {
-        let numero1 = parseInt(prompt("Ingrese un número entre 1 y 9"));
-        let numero2 = parseInt(prompt("Ingrese el número que sera sumado en cada iteraccion"));
-        let suma = 0;
-            for (let i=0; i < 10; i++)
-            {
-                suma = numero1 + numero2;
-                console.log("Nro de iteracion: "+i)
-            }
-            console.log("Suma: " +suma)
-            alert(numero1 + " + " + numero2 + " =  " + suma)          
-    }
+let impuesto = 15;
+let eleccion;
+let cantidadPasajes = 0;
+let Bienvenida = "Mensaje de bienvenida"
+
+function elegirDestino() 
+{
+    let edad = prompt("Por favor, para ingresar al sitio debemos validar tu edad. Por favor ingresa tu edad");
     
-    sumarNumero()
+    if(edad < 18) {
+
+        alert("Para poder comprar pasajes, debes ser mayor de 18 años");
     
- function concatenarTexto() 
-    {
-        let texto = prompt("Vamos a concatenar dos textos. Ingrese el primer texto que servirá como base")
-        let result = texto
-        let txtConcat
+    } else 
+        {
+        Bienvenida = alert("Bievenido a tu aerolínea de confianza!");
+        eleccion = prompt("Elija su destino: \n 1 - Roma ($1000) \n 2 - Milan ($2000) \n 3 - Venezia ($3000)")
         
-            while (txtConcat != 'ESC')
+            switch(eleccion) 
             {
-                let segundoTexto = prompt("Ingrese un texto para concatenar al texto anterior. Puede dejar de concatenar escribiendo ESC")
-                txtConcat = segundoTexto
-                result = result + " " + segundoTexto
-                console.log(result)
-                alert("Resultado de la concatenacion: " +result)
-            }
+                case "1":
+                    alert("Usted eligió Roma");
+                    break;
+                case "2":
+                    alert("Usted eligió Milan")  
+                    break;  
+                case "3":
+                    alert("Usted eligió Venezia")
+                    break;
+                default:
+                    alert("Debe elegir uno de los 3 destinos")
+            }    
+    return eleccion
     }
-    
-    concatenarTexto()
+}
 
+elegirDestino() 
 
-    function repetirMensaje() 
-    {
-        alert("Vamos a repetir la palabra HOLA, la cantidad de veces ingresada.")
-        let numero1 = parseInt(prompt("Ingrese la cantidad de veces que quiere repetir la palabra"))
+function calcularCosto() {
+    do(edad > 18)
+    while(cantidadPasajes > 0) {
+        cantidadPasajes = prompt("Ingrese la cantidad de pasajes que quiere comprar. Tenga en cuenta que a los mismos se le aplicará un impuesto de 15% sobre el valor total");
+        let costoCiudad = 1000 * eleccion;
+        let costo = cantidadPasajes * costoCiudad;
+        let impuestoDestino = costo * impuesto / 100;
+        let costoTotal = impuestoDestino + costo;
         
-            for(let i = 1; i <= numero1; i++)
-            {
-                alert("HOLA (x" + i + ")")
-            }
+        alert("El valor total de los pasajes CON impuestos es de: "+costoTotal);
+        cantidadPasajes = 0;
     }
-    
-    repetirMensaje()
+}
+
+calcularCosto()
